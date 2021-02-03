@@ -17,31 +17,17 @@ btnNext.addEventListener("click", function () {
     result = count - 1;
     btnStepAll[result].classList.add("active");
     console.log(result);
-    // return false;
 });
-console.log(result);
 
-// btnPrev.addEventListener("click", function () {
-//     // all
-//     count--;
-//     result = count - 1;
-// });
-// console.log(result);
-// count = 5;
-// btnPrev.addEventListener("click", function () {
-//     // all
-//     btnStepAll.forEach(function (val, el) {
-//         let currentItem = val;
-//         currentItem.classList.remove("active");
-//     });
-//     count--;
-//     let result = count;
-//     btnStepAll[result].classList.add("active");
-//     // console.log(result);
-//     // count--;
-//     // result = count + 1;
-//     // btnStepAll[result].classList.add("active");
-// });
+for (let i = 0; i < btnStepAll.length; i++) {
+    btnStepAll[i].addEventListener("click", function () {
+        btnStepAll.forEach(function (val) {
+            let currentItem = val;
+            currentItem.classList.remove("active");
+        });
+        btnStepAll[i].classList.add("active");
+    });
+}
 
 /*
 1. 버튼을 누른다.
