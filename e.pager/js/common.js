@@ -1,37 +1,42 @@
 // common
-const btnPrev = document.querySelector(".btnPrev");
-let btnStepAll = document.querySelectorAll(".btnStep");
-const btnNext = document.querySelector(".btnNext");
-
-let count = "";
-let result = "";
-
-btnNext.addEventListener("click", function () {
-    // all
+const removeAll = () => {
     btnStepAll.forEach(function (val) {
         let currentItem = val;
         currentItem.classList.remove("active");
     });
-    // click
-    count++;
-    result = count - 1;
-    btnStepAll[result].classList.add("active");
-    console.log(result);
-});
+};
+
+const btnPrev = document.querySelector(".btnPrev");
+const btnNext = document.querySelector(".btnNext");
+const btnStepAll = document.querySelectorAll(".btnStep");
+let btnTotal = btnStepAll.length;
+let current = document.querySelector(".btnStep.active");
+btnTotal = btnTotal - 1;
+
+let count = "";
+let result = "";
 
 for (let i = 0; i < btnStepAll.length; i++) {
     btnStepAll[i].addEventListener("click", function () {
-        btnStepAll.forEach(function (val) {
-            let currentItem = val;
-            currentItem.classList.remove("active");
-        });
+        removeAll();
         btnStepAll[i].classList.add("active");
     });
 }
 
+btnNext.addEventListener("click", function () {
+    // all
+    removeAll();
+
+    count++;
+    result = count - 1;
+    btnStepAll[result].classList.add("active");
+});
+
 /*
+
 1. 버튼을 누른다.
 2. 한칸씩 옆으로 이동한다.
 3. 
 4. 
+
 */
