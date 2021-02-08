@@ -13,7 +13,7 @@ btnPlus.addEventListener("click", (e) => {
     e.preventDefault();
 
     num++;
-    console.log("+");
+    // console.log("+");
     let inputValue = inputBox.value;
     // inputValue += "";
 
@@ -22,12 +22,17 @@ btnPlus.addEventListener("click", (e) => {
     resultArr.push(inputValue);
 
     if (num > 1) {
-        console.log("1보다 큼");
+        // console.log("1보다 큼");
         inputValue = "";
-        console.log(resultArr);
+        // console.log(resultArr);
     }
-    console.log(inputValue);
+    // console.log(inputValue);
     console.log(resultArr);
+
+    // let resultArr2 = resultArr.map((idx, val) => {
+    //     console.log(idx);
+    //     console.log(val);
+    // });
 
     // if (resultArr.length > 1) {
     //     console.log("개수가 많아짐");
