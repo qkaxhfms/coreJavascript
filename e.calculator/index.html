@@ -12,153 +12,57 @@
             <div class="calculator">
                 <div class="inputContainer">
                     <input
-                        type="number"
-                        id="numberBox"
-                        name="numberBox"
-                        class="input inputBox"
+                        type="text"
+                        class="input inputBox calculator-screen"
+                        value=""
+                        disabled
                     />
-                </div>
-                <div class="tableContainer">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="button btn btnNum"
-                                    >
-                                        1
-                                    </button>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="button btn btnNum"
-                                    >
-                                        2
-                                    </button>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="button btn btnNum"
-                                    >
-                                        3
-                                    </button>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="button btn btnPlus"
-                                    >
-                                        +
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="button btn btnNum"
-                                    >
-                                        4
-                                    </button>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="button btn btnNum"
-                                    >
-                                        5
-                                    </button>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="button btn btnNum"
-                                    >
-                                        6
-                                    </button>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="button btn btnMinu"
-                                    >
-                                        -
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="button btn btnNum"
-                                    >
-                                        7
-                                    </button>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="button btn btnNum"
-                                    >
-                                        8
-                                    </button>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="button btn btnNum"
-                                    >
-                                        9
-                                    </button>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="button btn btnMultiple"
-                                    >
-                                        *
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="button btn btnNum"
-                                    >
-                                        0
-                                    </button>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="button btn btnNum"
-                                    >
-                                        .
-                                    </button>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="button btn btnNum"
-                                    >
-                                        /
-                                    </button>
-                                </td>
-                                <td>
-                                    <button
-                                        type="button"
-                                        class="button btn btnResult"
-                                    >
-                                        =
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="calculator-keys">
+                        <button type="button" class="operator" value="+">
+                            +
+                        </button>
+                        <button type="button" class="operator" value="-">
+                            -
+                        </button>
+                        <button type="button" class="operator" value="*">
+                            ×
+                        </button>
+                        <button type="button" class="operator" value="/">
+                            ÷
+                        </button>
+
+                        <button type="button" value="7">7</button>
+                        <button type="button" value="8">8</button>
+                        <button type="button" value="9">9</button>
+
+                        <button type="button" value="4">4</button>
+                        <button type="button" value="5">5</button>
+                        <button type="button" value="6">6</button>
+
+                        <button type="button" value="1">1</button>
+                        <button type="button" value="2">2</button>
+                        <button type="button" value="3">3</button>
+
+                        <button type="button" value="0">0</button>
+                        <button type="button" class="decimal" value=".">
+                            .
+                        </button>
+                        <button
+                            type="button"
+                            class="all-clear"
+                            value="all-clear"
+                        >
+                            AC
+                        </button>
+
+                        <button
+                            type="button"
+                            class="equal-sign operator"
+                            value="="
+                        >
+                            =
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
