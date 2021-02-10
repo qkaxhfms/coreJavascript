@@ -1,39 +1,59 @@
+/* 계산기 */
+/*
+
+1. 클릭을 한다. -> 그 값이 console에 찍힌다.
+2. 클릭한 값이 updateDisplay에 찍힌다.
+
+*/
+
 const calculator = {
     displayValue: "0",
-    firstOperand: null, // 첫번째 피연산자 저장
-    waitingForSecondOperand: false, // 기본적으로 첫번째와 연산자가 모두 입력되었는지 확인
-    operator: null, // 키 발현에 대한 연산자 저장
+    // firstOperand: null,
+    // waitingForSecondOperand: false,
+    // operator: null,
 };
 
-function inputDigit(digit) {
-    const { displayValue } = calculator;
-
-    calculator.displayValue =
-        displayValue === "0" ? digit : displayValue + digit;
+function inputDigit() {
+    console.log("결과값출력");
 }
 
 function updateDisplay() {
-    const display = document.querySelector(".calculator-screen");
+    console.log("업데이트");
+    const display = document.querySelector(".calculatorScreen");
     display.value = calculator.displayValue;
 }
 
-const keys = document.querySelector(".calculator-keys");
-keys.addEventListener("click", (event) => {
-    const { target } = event;
-    if (!target.matches("button")) {
-        return;
-    }
-    if (target.classList.contains("operator")) {
-        console.log("operator", target.value);
-        return;
-    }
-    if (target.classList.contains("demical")) {
-        console.log("demical", target.value);
-        return;
-    }
-    if (target.classList.contains("all-clear")) {
-        return;
-    }
-    inputDigit(target.value);
-    updateDisplay();
-});
+const btnValues = document.querySelectorAll(".btnValue");
+
+for (i = 0; i < btnValues.length; i++) {
+    btnValues[i].addEventListener("click", function () {
+        console.log(this.value);
+        // return this.value;
+
+        // let calculatorValue = calculatorScreen.value;
+        // let this.value = push.calculatorValue;
+        // console.log(this.value)
+        inputDigit();
+        updateDisplay();
+    });
+}
+
+// let resultArr = [];
+// let defaultArr = [];
+
+// let num = 0;
+
+// btnPlus.addEventListener("click", function () {
+//     console.log("sdhjgsdlbdf");
+//     let calculatorValue = calculatorScreen.value;
+//     resultArr.push(calculatorValue);
+//     console.log(resultArr);
+// });
+
+// console.log(btnValues[0]);
+// console.log(btnValues[1]);
+// console.log(btnValues[2]);
+// console.log(btnValues[3]);
+// console.log(btnValues.length);
+
+// console.log(updateDisplay());
