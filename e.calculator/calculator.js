@@ -8,40 +8,40 @@
 
 const calculator = {
     displayValue: "0",
-    // firstOperand: null,
-    // waitingForSecondOperand: false,
-    // operator: null,
+    // displayValue: "1",
 };
 
-function inputDigit() {
-    console.log("결과값출력");
+function inputDigit(valueEach) {
+    console.log("각 항목 값 출력");
+
+    const { displayValue } = calculator;
+    // 현재 값이 '0'이면 'displayValue'를 덮어쓰거나 여기에 추가
+
+    calculator.displayValue =
+        displayValue === "0" ? valueEach : displayValue + valueEach;
 }
 
+// 창 최신화
 function updateDisplay() {
-    console.log("업데이트");
+    // console.log("업데이트");
     const display = document.querySelector(".calculatorScreen");
     display.value = calculator.displayValue;
 }
+updateDisplay();
 
 const btnValues = document.querySelectorAll(".btnValue");
 
 for (i = 0; i < btnValues.length; i++) {
     btnValues[i].addEventListener("click", function () {
-        console.log(this.value);
-        // return this.value;
+        let valueEach = this.value;
+        // console.log(valueEach);
+        // calculator.displayValue = valueEach;
+        // console.log(calculator.displayValue);
 
-        // let calculatorValue = calculatorScreen.value;
-        // let this.value = push.calculatorValue;
-        // console.log(this.value)
-        inputDigit();
+        inputDigit(valueEach);
         updateDisplay();
     });
 }
-
-// let resultArr = [];
-// let defaultArr = [];
-
-// let num = 0;
 
 // btnPlus.addEventListener("click", function () {
 //     console.log("sdhjgsdlbdf");
@@ -49,11 +49,3 @@ for (i = 0; i < btnValues.length; i++) {
 //     resultArr.push(calculatorValue);
 //     console.log(resultArr);
 // });
-
-// console.log(btnValues[0]);
-// console.log(btnValues[1]);
-// console.log(btnValues[2]);
-// console.log(btnValues[3]);
-// console.log(btnValues.length);
-
-// console.log(updateDisplay());
