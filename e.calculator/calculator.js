@@ -13,9 +13,7 @@ const calculator = {
     operator: null,
 };
 
-function inputDigit(valueEach) {
-    console.log("각 항목 값 출력");
-
+function inputDigit(digit) {
     const { displayValue, waitingForSecondOperand } = calculator;
     // 현재 값이 '0'이면 'displayValue'를 덮어쓰거나 여기에 추가
 
@@ -24,30 +22,75 @@ function inputDigit(valueEach) {
         calculator.waitingForSecondOperand = false;
     } else {
         calculator.displayValue =
-            displayValue === "0" ? valueEach : displayValue + valueEach;
+            displayValue === "0" ? digit : displayValue + digit;
     }
-    console.log(calculator);
+    // console.log(calculator);
 }
 
 function inputDemical(dot) {
+    // 연산자를 입력한 후 소숫점을 클릭하면 두번째의 일부가 아닌 첫밴째 피연산자에 추가된다.
+    if (calculator.waitingForSecondOperand === true) {
+        calculator.displayValue = "0.";
+        calculator.waitingForSecondOperand = false;
+        return;
+    }
+
     if (!calculator.displayValue.includes(dot)) {
         //소숫점이 포함되어 있지 않다면
         calculator.displayValue += dot;
     }
 }
+
 //연산자 처리
 function handleOperator(nextOperator) {
     const { firstOperand, displayValue, operator } = calculator;
-    const inputValue = parseFloat(displayValue); // 문자열 내용을 변환, 부동소수점 번호로
+    const inputValue = parseFloat(displayValue);
 
-    // firstOperand가 null이고, inputValue가 있는지 확인합니다. , Nan 값이 아닙니다.
+    // 10+2 하려다가 갑자기 10-2로바꿀때 연산자 무시가 필요해서 추가
+    if (operator && calculator.waitingForSecondOperand) {
+        calculator.operator = nextOperator;
+        console.log(calculator);
+        return;
+    }
+
     if (firstOperand == null && !isNaN(inputValue)) {
         calculator.firstOperand = inputValue;
+    } else if (operator) {
+        // 속성에 연산자가 추가되었는지 확인
+        const result = calculate(firstOperand, inputValue, operator);
+
+        calculator.displayValue = String(result);
+        calculator.firstOperand = result;
     }
+
     calculator.waitingForSecondOperand = true;
     calculator.operator = nextOperator;
+    // console.log(calculator);
+}
+
+function calculate(firstOperand, secondOperand, operator) {
+    if (operator === "+") {
+        return firstOperand + secondOperand;
+    } else if (operator === "-") {
+        return firstOperand - secondOperand;
+    } else if (operator === "*") {
+        return firstOperand * secondOperand;
+    } else if (operator === "/") {
+        return firstOperand / secondOperand;
+    }
+
+    return secondOperand;
+}
+
+// 창 리셋
+function resetCalculator() {
+    calculator.displayValue = "0";
+    calculator.firstOperand = null;
+    calculator.waitingForSecondOperand = false;
+    calculator.operator = null;
     console.log(calculator);
 }
+
 // 창 최신화
 function updateDisplay() {
     // console.log("업데이트");
@@ -56,23 +99,33 @@ function updateDisplay() {
 }
 updateDisplay();
 
-const btnValues = document.querySelectorAll(".btnValue");
+const keys = document.querySelector(".calculatorKeys");
+keys.addEventListener("click", (event) => {
+    const { target } = event;
+    const { value } = target;
+    if (!target.matches("button")) {
+        return;
+    }
 
-for (i = 0; i < btnValues.length; i++) {
-    btnValues[i].addEventListener("click", function () {
-        let valueEach = this.value;
-        // console.log(valueEach);
-        // calculator.displayValue = valueEach;
-        // console.log(calculator.displayValue);
+    switch (value) {
+        case "+":
+        case "-":
+        case "*":
+        case "/":
+        case "=":
+            handleOperator(value);
+            break;
+        case ".":
+            inputDecimal(value);
+            break;
+        case "clearAll":
+            resetCalculator();
+            break;
+        default:
+            if (Number.isInteger(parseFloat(value))) {
+                inputDigit(value);
+            }
+    }
 
-        inputDigit(valueEach);
-        updateDisplay();
-    });
-}
-
-// btnPlus.addEventListener("click", function () {
-//     console.log("sdhjgsdlbdf");
-//     let calculatorValue = calculatorScreen.value;
-//     resultArr.push(calculatorValue);
-//     console.log(resultArr);
-// });
+    updateDisplay();
+});
