@@ -1,7 +1,7 @@
-# 자바스크립트 계산기
+# 자바스크립트 PAGER
 
 자바스크립트로 계산기를 만들어보는 프로젝트입니다.
-사칙연산을 구현하였습니다.
+PAGER을 구현하였습니다.
 
 ## 개발자👨‍💻
 
@@ -10,8 +10,8 @@
 ## 파일 구조
 
 -   index.html
--   style.css
--   calculator.js
+-   css/common.css
+-   js/common.js
 
 ### 목표
 
@@ -20,9 +20,8 @@
 ### 사용
 
 -   HTML5
--   CSS3 (display:grid,display:flex)
+-   CSS3
 
 ### 문의사항
 
 -   kmsdevwork.gmail.com
--   출처 https://freshman.tech/calculator/
