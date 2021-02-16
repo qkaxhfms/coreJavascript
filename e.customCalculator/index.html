@@ -4,107 +4,55 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>계산기-자바스크립트</title>
+        <title>계산기</title>
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
-        <div class="inner">
-            <div class="calculator">
-                <div class="inputContainer">
-                    <input
-                        type="text"
-                        class="input calculatorScreen"
-                        value=""
-                        disabled
-                    />
-                    <div class="calculatorKeys">
-                        <button
-                            type="button"
-                            class="operator btnPlus"
-                            value="+"
-                        >
-                            +
-                        </button>
-                        <button
-                            type="button"
-                            class="operator btnMinus"
-                            value="-"
-                        >
-                            -
-                        </button>
-                        <button
-                            type="button"
-                            class="operator btnMultiple"
-                            value="*"
-                        >
-                            ×
-                        </button>
-                        <button
-                            type="button"
-                            class="operator btnDevide"
-                            value="/"
-                        >
-                            ÷
-                        </button>
+        <div class="calculator displayGrid">
+            <input
+                type="text"
+                disabled
+                value=""
+                class="item calculatorScreen"
+                name="calculatorScreen"
+            />
 
-                        <button type="button" class="btnValue" value="7">
-                            7
-                        </button>
-                        <button type="button" class="btnValue" value="8">
-                            8
-                        </button>
-                        <button type="button" class="btnValue" value="9">
-                            9
-                        </button>
+            <button type="button" value="ac" class="item operator reset">
+                AC
+            </button>
+            <button type="button" value="/" class="item operator devide">
+                /
+            </button>
+            <button type="button" value="*" class="item operator multiple">
+                *
+            </button>
+            <button type="button" value="-" class="item operator minus">
+                -
+            </button>
 
-                        <button type="button" class="btnValue" value="4">
-                            4
-                        </button>
-                        <button type="button" class="btnValue" value="5">
-                            5
-                        </button>
-                        <button type="button" class="btnValue" value="6">
-                            6
-                        </button>
+            <button type="button" value="7" class="item num">7</button>
+            <button type="button" value="8" class="item num">8</button>
+            <button type="button" value="9" class="item num">9</button>
 
-                        <button type="button" class="btnValue" value="1">
-                            1
-                        </button>
-                        <button type="button" class="btnValue" value="2">
-                            2
-                        </button>
-                        <button type="button" class="btnValue" value="3">
-                            3
-                        </button>
+            <button type="button" value="+" class="item operator btnPlus">
+                +
+            </button>
+            <button type="button" value="=" class="item operator btnResult">
+                =
+            </button>
 
-                        <button type="button" class="btnValue" value="0">
-                            0
-                        </button>
-                        <button
-                            type="button"
-                            class="decimal btnValue"
-                            value="."
-                        >
-                            .
-                        </button>
-                        <button
-                            type="button"
-                            class="clearAll btnValue"
-                            value="clearAll"
-                        >
-                            AC
-                        </button>
+            <button type="button" value="4" class="item num">4</button>
+            <button type="button" value="5" class="item num">5</button>
+            <button type="button" value="6" class="item num">6</button>
 
-                        <button
-                            type="button"
-                            class="equalSign operator btnValue"
-                            value="="
-                        >
-                            =
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <button type="button" value="1" class="item num">1</button>
+            <button type="button" value="2" class="item num">2</button>
+            <button type="button" value="3" class="item num">3</button>
+
+            <button type="button" value="0" class="item num btnZero" disabled>
+                0
+            </button>
+            <button type="button" value="." class="item dot" disabled>.</button>
         </div>
         <script src="js/common.js"></script>
     </body>

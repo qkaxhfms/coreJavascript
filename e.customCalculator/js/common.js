@@ -1,51 +1,67 @@
-/*
-1. 초기값 생성
-2. 누른 값 calculatorScreen에 넣기
-3. 연산 실행
-*/
-
-//초기값
+// 기본값
 const defaultValue = {
-    calculatorScreen: 0,
-    currentNum: 0,
+    defaultScreen: 0,
 };
-const resultValue = [];
-const btnValues = document.querySelectorAll(".btnValue");
+
+/* -----------------------------------------------------
+누른 값을 저장한다.
+첫번쨰 배열의 값이 있다면 초기화하고 새로 넣는다.
+----------------------------------------------------- */
+
+// 버튼클릭
+const btnNumClick = document.querySelectorAll(".num");
+const btnOperatorClick = document.querySelectorAll(".operator");
+
+// 결과값
+let step0 = null;
+let step1 = [];
+let step2 = null;
+let step3 = [];
+let step4 = null;
+let resultAll = null;
+
+// 화면표시
 const calculatorScreen = document.querySelector(".calculatorScreen");
+calculatorScreen.value = defaultValue.defaultScreen;
+console.log(calculatorScreen.value);
 
-// const result = () => {
-//     console.log("계산");
-//     console.log(defaultValue.calculatorScreen);
-// };
-// calculatorScreen.value = defaultValue.calculatorScreen; // calculatorScreen에 value 값 출력
+//유사배열을 배열로 변경
+const btnNumClickEvent = Array.from(btnNumClick);
+// console.log(btnNumClickEvent);
+// console.log(typeof btnNumClickEvent);
 
-for (const button of btnValues) {
-    button.addEventListener("click", function () {
-        let btnNumTrans = Number(this.value); //누르면 값 추출해서 number로 변경
-        // console.log(btnNumTrans);
-        // console.log((defaultValue.calculatorScreen = btnNumTrans));
-        calculatorScreen.value = btnNumTrans;
-        let result = calculatorScreen.value;
-        // const result = resultValue.push(btnNumTrans);
-        console.log(result);
+// 각 숫자버튼 클릭
+let btnNum = btnNumClickEvent.map((item) => {
+    return item.addEventListener("click", () => {
+        let btnValue = item.value;
+        step0 = btnValue;
+        step1.push(step0);
     });
-}
-const btnOperators = document.querySelectorAll(".operator");
-for (const button of btnOperators) {
-    button.addEventListener("click", function () {
-        let btnOperator = this.value;
-        // console.log(btnOperator);
+});
+
+//유사배열을 배열로 변경
+const btnOperatorClickEvent = Array.from(btnOperatorClick);
+// console.log(btnOperatorClickEvent);
+// console.log(typeof btnOperatorClickEvent);
+
+// 연산자 클릭
+let Operator = btnOperatorClickEvent.map((item) => {
+    return item.addEventListener("click", () => {
+        let btnOperator = item.value;
+        step2 = step1.join("");
+        step3.push(step2);
+        step1.length = 0; // 배열 초기화
+        if (btnOperator == "+") {
+            resultAll = step3.reduce((a, b) => Number(a) + Number(b));
+            calculatorScreen.value = resultAll;
+        }
+        if (btnOperator == "=") {
+            calculatorScreen.value = resultAll;
+        }
+        if (btnOperator == "ac") {
+            calculatorScreen.value = 0;
+            step1.length = 0;
+            step3.length = 0;
+        }
     });
-}
-
-// console.log(3 + 5);
-
-/*
-
-결합과정
-1. 숫자를 누른다.
-2. 배열에 담긴다.
-3. 연산자를 누르면 합쳐져서 배열에 들어간다.
-1~3번 값을 하나로 인식한다.
-
-*/
+});

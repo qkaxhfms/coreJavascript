@@ -16,7 +16,7 @@
 ### 단계
 
 1. 초기값 생성
-2. 누른 값 calculatorScreen에 넣기
+2. 누른 값 defaultScreen에 넣기
 3. 연산 실행
 
 ### 목표
