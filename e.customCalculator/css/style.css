@@ -40,7 +40,7 @@ button {
     font-size: 14px;
 }
 button:disabled {
-    border: 1px solid red;
+    background: #ccc;
     cursor: auto;
 }
 
