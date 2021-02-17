@@ -18,7 +18,7 @@ let resultAll = null;
 // 화면표시
 const calculatorScreen = document.querySelector('.calculatorScreen');
 calculatorScreen.value = defaultValue.defaultScreen;
-console.log(calculatorScreen.value);
+// console.log(calculatorScreen.value);
 
 //유사배열을 배열로 변경
 const btnNumClickEvent = Array.from(btnNumClick);
@@ -58,18 +58,56 @@ let Operator = btnOperatorClickEvent.map((item) => {
             step4 = null;
         }
 
-        if (btnOperator == '+') {
-            resultAll = step3.reduce((a, b) => Number(a) + Number(b));
-            calculatorScreen.value = resultAll;
-        }
-
         if (btnOperator == '-') {
-            console.log('빼기');
+            console.log(step3);
         }
 
-        if (btnOperator == '=') {
+        if (btnOperator == '+' || btnOperator == '=') {
             resultAll = step3.reduce((a, b) => Number(a) + Number(b));
             calculatorScreen.value = resultAll;
         }
     });
 });
+
+/*
+
+문제점 -> 빼기가 안됨
+연산 시에 + 말고 '연산자'를 넣어서 계산하는 방향으로 나가야 함
+
+*/
+
+// console.log(step0);
+// console.log(step1);
+// console.log(step2);
+// console.log(step3);
+// console.log(step4);
+// resultAll = step3.map((item) => {
+//     return item;
+// });
+// // conso1e.log()
+// console.log(resultAll);
+// let resultB = resultAll.join(btnOperator);
+// console.log(resultB);
+// step4 += step3 + btnOperator;
+// console.log(step4);
+// 0 + 0 + 2 + 5 이런 형태가 되어야 함
+
+// var sumArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// var result = sumArr.map(function (num) {
+//     return num + '+';
+// });
+
+// let sabab = ['1', '+', '2', '+'];
+// let bbb = sabab.join('');
+// let ccc = String(bbb);
+// console.log(sabab);
+// console.log(bbb);
+// console.log(ccc);
+
+// let aaa = sabab.map((val, idx, item) => {
+//     if (val !== '+') {
+//         // console.log(this);
+//     }
+//     return val;
+// });
+// console.log(aaa);
