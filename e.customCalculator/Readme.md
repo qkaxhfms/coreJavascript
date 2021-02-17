@@ -10,14 +10,19 @@
 ## 파일 구조
 
 -   index.html
--   style.css
--   calculator.js
+-   css/style.css
+-   js/calculator.js
 
 ### 단계
 
 1. 초기값 생성
 2. 누른 값 defaultScreen에 넣기
 3. 연산 실행
+
+#### 오류처리
+
+1. 소수점 계산 실행 ex) 0.82 + 8 = 8.82
+2. 0으로 시작하면 수정 ex) 082 -> 82
 
 ### 목표
 
