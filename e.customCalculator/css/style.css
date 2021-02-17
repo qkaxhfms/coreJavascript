@@ -54,7 +54,6 @@ button:disabled {
     grid-column: 1/5;
     text-align: right;
     padding: 0 1.2rem;
-    /* background: yellow; */
 }
 .btnResult {
     /* background: pink; */
@@ -76,4 +75,25 @@ button:disabled {
     /* background: Red; */
     width: 100%;
     grid-column: 1 / span 2;
+}
+
+/* 해상도 수정 */
+@media all and (max-width: 968px) {
+    body {
+        justify-content: stretch;
+        align-items: stretch;
+    }
+    input,
+    button {
+        font-size: 5vh;
+    }
+    .calculator {
+        padding: 1rem;
+    }
+    .displayGrid {
+        width: 100%;
+    }
+    .item {
+        height: 100%;
+    }
 }
