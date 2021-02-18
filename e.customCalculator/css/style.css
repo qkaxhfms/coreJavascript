@@ -79,7 +79,12 @@ button:disabled {
 
 /* 해상도 수정 */
 @media all and (max-width: 968px) {
+    html {
+        height: -webkit-fill-available;
+    }
     body {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
         justify-content: stretch;
         align-items: stretch;
     }
@@ -88,6 +93,8 @@ button:disabled {
         font-size: 5vh;
     }
     .calculator {
+        width: 100%;
+        height: 100%;
         padding: 1rem;
     }
     .displayGrid {

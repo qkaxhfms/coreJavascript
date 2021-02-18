@@ -49,7 +49,7 @@ let Operator = btnOperatorClickEvent.map((item) => {
         step3.push(step2);
         step1.length = 0; // 배열 초기화
 
-        if (btnOperator == 'ac') {
+        if (btnOperator === 'ac') {
             calculatorScreen.value = 0;
             step0 = null;
             step1.length = 0;
@@ -62,7 +62,15 @@ let Operator = btnOperatorClickEvent.map((item) => {
             console.log(step3);
         }
 
-        if (btnOperator == '+' || btnOperator == '=') {
+        if (btnOperator == '+') {
+            // resultAll = step3.reduce((a, b) => Number(a) + Number(b));
+            // resultAll = step3.map((item) => {
+            //     console.log(item);
+            // });
+            // calculatorScreen.value = resultAll;
+        }
+
+        if (btnOperator == '+' || btnOperator == '-' || btnOperator == '=') {
             resultAll = step3.reduce((a, b) => Number(a) + Number(b));
             calculatorScreen.value = resultAll;
         }
@@ -111,3 +119,11 @@ let Operator = btnOperatorClickEvent.map((item) => {
 //     return val;
 // });
 // console.log(aaa);
+
+/*
+더하기
+step[0] + step[1] + step[3] + step[4] + step[5] + step[n] 
+
+빼기
+step[0] - step[1] - step[3] - step[4] - step[5] - step[n] 
+*/
