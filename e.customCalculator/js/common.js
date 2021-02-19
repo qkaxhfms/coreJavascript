@@ -1,81 +1,86 @@
 // 기본값
 const defaultValue = {
     defaultScreen: 0,
+    operatorCheck: false,
+    numberCheck: true,
+    equalsCheck: true,
 };
 
+const buttons = document.querySelectorAll('.btn');
+console.log(buttons);
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log('클릭');
+        // switch(button.data)
+    });
+});
+
 // 버튼클릭
-const btnNumClick = document.querySelectorAll('.num');
-const btnOperatorClick = document.querySelectorAll('.operator');
+// const btnNumClick = document.querySelectorAll('.num');
+// const btnOperatorClick = document.querySelectorAll('.operator');
 
 // 결과값
-let step0 = null;
-let step1 = [];
-let step2 = null;
-let step3 = [];
-let step4 = null;
-let resultAll = null;
+// let step0 = null;
+// let step1 = [];
+// let step2 = null;
+// let step3 = [];
+// let step4 = null;
+// let resultAll = '';
 
 // 화면표시
-const calculatorScreen = document.querySelector('.calculatorScreen');
-calculatorScreen.value = defaultValue.defaultScreen;
+// const calculatorScreen = document.querySelector('.calculatorScreen');
+// calculatorScreen.value = defaultValue.defaultScreen;
 // console.log(calculatorScreen.value);
 
 //유사배열을 배열로 변경
-const btnNumClickEvent = Array.from(btnNumClick);
+// const btnNumClickEvent = Array.from(btnNumClick);
 
 // 각 숫자버튼 클릭
-let btnNum = btnNumClickEvent.map((item) => {
-    return item.addEventListener('click', () => {
-        let btnValue = item.value;
-        step0 = btnValue;
-        step1.push(step0);
-        let step1Change = step1.join('');
-        calculatorScreen.value = step1Change;
+// let btnNum = btnNumClickEvent.map((item) => {
+//     return item.addEventListener('click', () => {
+//         let btnValue = item.value;
+//         step0 = btnValue;
+//         step1.push(step0);
+//         let step1Change = step1.join('');
+//         calculatorScreen.value = step1Change;
 
-        if (step1[0] === 0) {
-            step1[0] = '';
-        }
-    });
-});
+//         if (step1[0] === 0) {
+//             step1[0] = '';
+//         }
+//     });
+// });
 
 //유사배열을 배열로 변경
-const btnOperatorClickEvent = Array.from(btnOperatorClick);
+// const btnOperatorClickEvent = Array.from(btnOperatorClick);
 
 // 연산자 클릭
-let Operator = btnOperatorClickEvent.map((item) => {
-    return item.addEventListener('click', () => {
-        let btnOperator = item.value;
-        step2 = step1.join('');
-        step3.push(step2);
-        step1.length = 0; // 배열 초기화
+// let Operator = btnOperatorClickEvent.map((item) => {
+//     return item.addEventListener('click', () => {
+//         let btnOperator = item.value;
+//         step2 = step1.join('');
+//         step3.push(step2);
+//         step1.length = 0; // 배열 초기화
 
-        if (btnOperator === 'ac') {
-            calculatorScreen.value = 0;
-            step0 = null;
-            step1.length = 0;
-            step2 = null;
-            step3.length = 0;
-            step4 = null;
-        }
+//         if (btnOperator === 'ac') {
+//             calculatorScreen.value = 0;
+//             step0 = null;
+//             step1.length = 0;
+//             step2 = null;
+//             step3.length = 0;
+//             step4 = null;
+//         }
 
-        if (btnOperator == '-') {
-            console.log(step3);
-        }
+//         if (btnOperator == '+' || btnOperator == '-' || btnOperator == '=') {
+//             resultAll = step3.reduce((a, b) => Number(a) + Number(b));
+//             calculatorScreen.value = resultAll;
+//         }
+//     });
+// });
 
-        if (btnOperator == '+') {
-            // resultAll = step3.reduce((a, b) => Number(a) + Number(b));
-            // resultAll = step3.map((item) => {
-            //     console.log(item);
-            // });
-            // calculatorScreen.value = resultAll;
-        }
+let a = ['1', '2', '3', '4'];
 
-        if (btnOperator == '+' || btnOperator == '-' || btnOperator == '=') {
-            resultAll = step3.reduce((a, b) => Number(a) + Number(b));
-            calculatorScreen.value = resultAll;
-        }
-    });
-});
+let b = ['11', '22', '33', '44'];
 
 /*
 
@@ -127,3 +132,20 @@ step[0] + step[1] + step[3] + step[4] + step[5] + step[n]
 빼기
 step[0] - step[1] - step[3] - step[4] - step[5] - step[n] 
 */
+
+let oPlus = '+';
+let oMinus = '-';
+
+let abc = [1 + 2 - 4.3];
+console.log;
+
+// let abc2 = 1 + '+' + 2 + '-' + 3;
+// let abc3 = '1' + '+' + '2' + '-' + '3';
+// let abc4 = '1 + 2 + 3';
+console.log(abc);
+// console.log(abc2);
+// console.log(abc3);
+// console.log(abc4);
+// console.log(Number(abc4));
+
+console.log(1 + 2 - 3 - 0.3);
