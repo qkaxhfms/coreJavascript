@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SetTimeout</title>
+    </head>
+    <body>
+        <h1>SetTimeout</h1>
+        <script>
+            const test = () => {
+                setTimeout(function () {
+                    console.log('타이머 끝');
+                }, 0);
+                for (let i = 1; i < 4; i++) {
+                    console.log(i);
+                }
+            };
+            test();
+            console.log('for문 끝');
+
+            /*
+            
+            1. callstack에 test함수를 처리
+            2. callstack이 setTimeout구문을 만나면 해당구문을 무시하고 web api로 전달
+            3. callstack이 for문 처리
+            4. callstack이 for문 끝이라는 콘솔을 처리
+            5. callstack이 '메인끝' 반목문 실행
+            6. web api가 2번단계에서 거의 동시에 setTime을 처리함
+            7. setTime안에있는 콘솔문을 다시 callstack에 전달
+            8. 제일 마지막에 콜스택이 등록
+            */
+        </script>
+    </body>
+</html>

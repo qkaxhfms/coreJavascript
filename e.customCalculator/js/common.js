@@ -1,37 +1,55 @@
 // 기본값
 const defaultValue = {
     defaultScreen: 0,
-    operatorCheck: false,
+    operCheck: false,
     numberCheck: true,
-    equalsCheck: true,
+    equlasCheck: true,
 };
-
-const buttons = document.querySelectorAll('.btn');
-console.log(buttons);
-
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        console.log('클릭');
-        // switch(button.data)
-    });
-});
 
 // 버튼클릭
 // const btnNumClick = document.querySelectorAll('.num');
 // const btnOperatorClick = document.querySelectorAll('.operator');
+const buttons = document.querySelectorAll('.btn');
 
 // 결과값
-// let step0 = null;
-// let step1 = [];
-// let step2 = null;
-// let step3 = [];
-// let step4 = null;
-// let resultAll = '';
+let step0 = null;
+let step1 = [];
+let step2 = null;
+let step3 = [];
+let step4 = null;
+let resultAll = null;
 
 // 화면표시
-// const calculatorScreen = document.querySelector('.calculatorScreen');
-// calculatorScreen.value = defaultValue.defaultScreen;
+const calculatorScreen = document.querySelector('.calculatorScreen');
+calculatorScreen.value = defaultValue.defaultScreen;
 // console.log(calculatorScreen.value);
+
+const buttonChange = Array.from(buttons);
+let button = buttonChange.map((button) => {
+    return button.addEventListener('click', () => {
+        // console.log('클릭');
+        switch (button.dataset.type) {
+            case 'operator':
+                // const oper = button.innerText;
+                // operator(oper);
+                console.log('operator');
+                break;
+            case 'ac':
+                // clear();
+                console.log('ac');
+                break;
+            case 'equals':
+                console.log('equals');
+                break;
+            // default:
+            //     const number = button.innerText;
+            //     displayNumber(number);
+            //     break;
+        }
+    });
+});
+
+// const buttons = array;
 
 //유사배열을 배열로 변경
 // const btnNumClickEvent = Array.from(btnNumClick);
@@ -54,7 +72,7 @@ buttons.forEach((button) => {
 //유사배열을 배열로 변경
 // const btnOperatorClickEvent = Array.from(btnOperatorClick);
 
-// 연산자 클릭
+// // 연산자 클릭
 // let Operator = btnOperatorClickEvent.map((item) => {
 //     return item.addEventListener('click', () => {
 //         let btnOperator = item.value;
@@ -78,9 +96,9 @@ buttons.forEach((button) => {
 //     });
 // });
 
-let a = ['1', '2', '3', '4'];
+// let a = ['1', '2', '3', '4'];
 
-let b = ['11', '22', '33', '44'];
+// let b = ['11', '22', '33', '44'];
 
 /*
 

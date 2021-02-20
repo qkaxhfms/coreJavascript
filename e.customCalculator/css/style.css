@@ -55,14 +55,14 @@ button:disabled {
     text-align: right;
     padding: 0 1.2rem;
 }
-.btnResult {
+.equals {
     /* background: pink; */
     height: 100%;
     grid-row: 5 / span 2;
     grid-column-start: 4;
     /* grid-row: 4 / span 2; */
 }
-.btnPlus {
+.plus {
     /* background: blue; */
     height: 100%;
     grid-row: 3 / span 2;
@@ -71,7 +71,7 @@ button:disabled {
     /* grid-row-end: 5; */
 }
 
-.btnZero {
+.zero {
     /* background: Red; */
     width: 100%;
     grid-column: 1 / span 2;
