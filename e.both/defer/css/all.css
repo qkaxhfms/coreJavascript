@@ -1,0 +1,44 @@
+html {
+  font-size: 62.5%; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+ul,
+ol,
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+li {
+  color: #333; }
+
+li.on {
+  color: red; }
+
+.lists-unknown__depth1 {
+  display: flex;
+  align-items: center; }
+  .lists-unknown__depth1 li {
+    width: 100%;
+    text-align: center; }
+    .lists-unknown__depth1 li.on a {
+      background: #333;
+      color: #fff; }
+  .lists-unknown__depth1 a {
+    display: block;
+    padding: 1rem;
+    background: #fff;
+    color: #333; }
+.lists-unknown__depth2 div {
+  height: 200px;
+  border: 1px solid blue;
+  display: none; }
+  .lists-unknown__depth2 div.on {
+    display: block;
+    line-height: 20rem; }
+
+/*# sourceMappingURL=all.css.map */
