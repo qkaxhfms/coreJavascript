@@ -6,164 +6,66 @@ const defaultValue = {
     equlasCheck: true,
 };
 
+// 단계
+let stepAll = {
+    step0: null,
+    step1: [],
+    step2: null,
+    step3: [],
+    step4: null,
+};
+
 // 버튼클릭
 // const btnNumClick = document.querySelectorAll('.num');
 // const btnOperatorClick = document.querySelectorAll('.operator');
 const buttons = document.querySelectorAll('.btn');
-
-// 결과값
-let step0 = null;
-let step1 = [];
-let step2 = null;
-let step3 = [];
-let step4 = null;
-let resultAll = null;
+const buttonNumbers = document.querySelectorAll('.btnNum');
 
 // 화면표시
 const calculatorScreen = document.querySelector('.calculatorScreen');
 calculatorScreen.value = defaultValue.defaultScreen;
-// console.log(calculatorScreen.value);
+console.log(calculatorScreen.value);
 
 const buttonChange = Array.from(buttons);
 let button = buttonChange.map((button) => {
     return button.addEventListener('click', () => {
-        // console.log('클릭');
         switch (button.dataset.type) {
+            case 'number':
+                numberClick();
+                break;
             case 'operator':
-                // const oper = button.innerText;
-                // operator(oper);
-                console.log('operator');
+                operatorClick();
                 break;
             case 'ac':
-                // clear();
-                console.log('ac');
+                clearAll();
                 break;
             case 'equals':
-                console.log('equals');
+                equalsAll();
                 break;
-            // default:
-            //     const number = button.innerText;
-            //     displayNumber(number);
-            //     break;
         }
     });
 });
 
-// const buttons = array;
+let current = '';
+const numberClick = (currentValue) => {
+    console.log('숫자표시');
 
-//유사배열을 배열로 변경
-// const btnNumClickEvent = Array.from(btnNumClick);
+    // console.log(currentValue);
+};
 
-// 각 숫자버튼 클릭
-// let btnNum = btnNumClickEvent.map((item) => {
-//     return item.addEventListener('click', () => {
-//         let btnValue = item.value;
-//         step0 = btnValue;
-//         step1.push(step0);
-//         let step1Change = step1.join('');
-//         calculatorScreen.value = step1Change;
+const resultAll = () => {
+    console.log('결과표시');
+};
 
-//         if (step1[0] === 0) {
-//             step1[0] = '';
-//         }
-//     });
-// });
+const operatorClick = () => {
+    console.log('계산');
+    // console.log(operValue);
+};
 
-//유사배열을 배열로 변경
-// const btnOperatorClickEvent = Array.from(btnOperatorClick);
+const clearAll = () => {
+    console.log('초기화');
+};
 
-// // 연산자 클릭
-// let Operator = btnOperatorClickEvent.map((item) => {
-//     return item.addEventListener('click', () => {
-//         let btnOperator = item.value;
-//         step2 = step1.join('');
-//         step3.push(step2);
-//         step1.length = 0; // 배열 초기화
-
-//         if (btnOperator === 'ac') {
-//             calculatorScreen.value = 0;
-//             step0 = null;
-//             step1.length = 0;
-//             step2 = null;
-//             step3.length = 0;
-//             step4 = null;
-//         }
-
-//         if (btnOperator == '+' || btnOperator == '-' || btnOperator == '=') {
-//             resultAll = step3.reduce((a, b) => Number(a) + Number(b));
-//             calculatorScreen.value = resultAll;
-//         }
-//     });
-// });
-
-// let a = ['1', '2', '3', '4'];
-
-// let b = ['11', '22', '33', '44'];
-
-/*
-
-문제점 -> 빼기가 안됨
-연산 시에 + 말고 '연산자'를 넣어서 계산하는 방향으로 나가야 함
-
-*/
-
-// console.log(step0);
-// console.log(step1);
-// console.log(step2);
-// console.log(step3);
-// console.log(step4);
-// resultAll = step3.map((item) => {
-//     return item;
-// });
-// // conso1e.log()
-// console.log(resultAll);
-// let resultB = resultAll.join(btnOperator);
-// console.log(resultB);
-// step4 += step3 + btnOperator;
-// console.log(step4);
-// 0 + 0 + 2 + 5 이런 형태가 되어야 함
-
-// var sumArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-// var result = sumArr.map(function (num) {
-//     return num + '+';
-// });
-
-// let sabab = ['1', '+', '2', '+'];
-// let bbb = sabab.join('');
-// let ccc = String(bbb);
-// console.log(sabab);
-// console.log(bbb);
-// console.log(ccc);
-
-// let aaa = sabab.map((val, idx, item) => {
-//     if (val !== '+') {
-//         // console.log(this);
-//     }
-//     return val;
-// });
-// console.log(aaa);
-
-/*
-더하기
-step[0] + step[1] + step[3] + step[4] + step[5] + step[n] 
-
-빼기
-step[0] - step[1] - step[3] - step[4] - step[5] - step[n] 
-*/
-
-let oPlus = '+';
-let oMinus = '-';
-
-let abc = [1 + 2 - 4.3];
-console.log;
-
-// let abc2 = 1 + '+' + 2 + '-' + 3;
-// let abc3 = '1' + '+' + '2' + '-' + '3';
-// let abc4 = '1 + 2 + 3';
-console.log(abc);
-// console.log(abc2);
-// console.log(abc3);
-// console.log(abc4);
-// console.log(Number(abc4));
-
-console.log(1 + 2 - 3 - 0.3);
+const equalsAll = () => {
+    console.log('계산결과');
+};
