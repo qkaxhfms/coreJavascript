@@ -12,154 +12,34 @@
     </head>
     <body>
         <div class="calculator displayGrid">
-            <input
-                type="text"
-                disabled
-                value=""
-                class="item calculatorScreen"
-                name="calculatorScreen"
-            />
+            <input type="text" value="0" class="calculatorScreen" disabled />
 
-            <button
-                type="button"
-                value="ac"
-                class="btn item operator cancle"
-                data-type="ac"
-            >
-                AC
+            <button data-type="ac" class="ac">AC</button>
+            <button data-type="operator">&divide;</button>
+            <button type="button" class="btn" data-type="operator">
+                &times;
             </button>
-            <button
-                type="button"
-                value="/"
-                class="btn item operator devide"
-                data-type="operator"
-            >
-                /
-            </button>
-            <button
-                type="button"
-                value="*"
-                class="btn item operator multiple"
-                data-type="operator"
-            >
-                *
-            </button>
-            <button
-                type="button"
-                value="-"
-                class="btn item operator minus"
-                data-type="operator"
-            >
-                -
-            </button>
+            <button type="button" class="btn" data-type="operator">-</button>
 
-            <button
-                type="button"
-                value="7"
-                class="btn item btnNum"
-                data-type="number"
-            >
-                7
-            </button>
-            <button
-                type="button"
-                value="8"
-                class="btn item btnNum"
-                data-type="number"
-            >
-                8
-            </button>
-            <button
-                type="button"
-                value="9"
-                class="btn item btnNum"
-                data-type="number"
-            >
-                9
-            </button>
+            <button type="button" class="btn">7</button>
+            <button type="button" class="btn">8</button>
+            <button type="button" class="btn">9</button>
 
-            <button
-                type="button"
-                value="+"
-                class="btn item operator plus"
-                data-type="operator"
-            >
+            <button type="button" class="btn">4</button>
+            <button type="button" class="btn">5</button>
+            <button type="button" class="btn">6</button>
+
+            <button type="button" class="btn">1</button>
+            <button type="button" class="btn">2</button>
+            <button type="button" class="btn">3</button>
+
+            <button type="button" class="btn plus" data-type="operator">
                 +
             </button>
-            <button
-                type="button"
-                value="="
-                class="btn item btnNum operator equals"
-                data-type="operator"
-            >
+            <button type="button" class="btn zero">0</button>
+            <button type="button" class="btn">.</button>
+            <button type="button" class="btn equals" data-type="equals">
                 =
-            </button>
-
-            <button
-                type="button"
-                value="4"
-                class="btn item btnNum"
-                data-type="number"
-            >
-                4
-            </button>
-            <button
-                type="button"
-                value="5"
-                class="btn item btnNum"
-                data-type="number"
-            >
-                5
-            </button>
-            <button
-                type="button"
-                value="6"
-                class="btn item btnNum"
-                data-type="number"
-            >
-                6
-            </button>
-
-            <button
-                type="button"
-                value="1"
-                class="btn item btnNum"
-                data-type="number"
-            >
-                1
-            </button>
-            <button
-                type="button"
-                value="2"
-                class="btn item btnNum"
-                data-type="number"
-            >
-                2
-            </button>
-            <button
-                type="button"
-                value="3"
-                class="btn item btnNum"
-                data-type="number"
-            >
-                3
-            </button>
-
-            <button
-                type="button"
-                value="0"
-                class="btn item btnNum zero"
-                data-type="number"
-            >
-                0
-            </button>
-            <button
-                type="button"
-                value="."
-                class="btn item dot"
-                data-type="number"
-            >
-                .
             </button>
         </div>
         <script src="js/common.js"></script>
