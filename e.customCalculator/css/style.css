@@ -91,6 +91,7 @@ button:disabled {
     input,
     button {
         font-size: 5vh;
+        height: auto;
     }
     .calculator {
         width: 100%;
