@@ -16,7 +16,13 @@ const landscape = {
 // console.log(format);
 // console.log(src);
 
-const { photographer, ...addtional } = landscape; //전개연산자로 간소화
+//전개연산자로 간소화
+// const { photographer, ...addtional } = landscape;
 
-console.log(landscape);
-console.log(addtional); //사진 객체를 삭제한 후 반환한 값과 같다.
+// console.log(landscape);
+// //사진 객체를 삭제한 후 반환한 값과 같다.
+// console.log(addtional);
+
+const { src: url } = landscape;
+// console.log(src);
+console.log(url); //photo.src의 정보를 변수 이름 url에 삽입한다.
