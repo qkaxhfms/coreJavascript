@@ -8,21 +8,29 @@ const landscape = {
     location: [32.8222222, -103.456389],
 };
 
-// const { title, photographer, equipment, format, src } = landscape;
+const region = {
+    city: 'Hobbs',
+    county: 'Lea',
+    state: {
+        name: 'New Mexico',
+        abbereviation: 'NM',
+    },
+};
 
-// console.log(title);
-// console.log(photographer);
-// console.log(equipment);
-// console.log(format);
-// console.log(src);
+function getCityAndState({ location }) {
+    const { city, state } = determineCityAndState(location);
+    return {
+        city, // 해체할당으로 꺼낸 city를 단축 속성명으로 추가
+        state: state.abbereviation, //키-값 할당 방법을 사용
+    };
+}
 
-//전개연산자로 간소화
-// const { photographer, ...addtional } = landscape;
-
-// console.log(landscape);
-// //사진 객체를 삭제한 후 반환한 값과 같다.
-// console.log(addtional);
-
-const { src: url } = landscape;
-// console.log(src);
-console.log(url); //photo.src의 정보를 변수 이름 url에 삽입한다.
+function setRegion({ location, ...details }) {
+    //필요로 하는 객체를 만들기 위해 details를 이렇게 처리
+    const { city, state } = determineCityAndState(location);
+    return {
+        city,
+        state: state.abbereviation,
+        ...details,
+    };
+}
