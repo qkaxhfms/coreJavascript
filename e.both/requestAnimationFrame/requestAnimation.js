@@ -1,3 +1,4 @@
+// requestAnimationFrame
 // https://developer.mozilla.org/ko/docs/Web/API/Window/requestAnimationFrame
 
 // 움직이는 박스
@@ -34,5 +35,5 @@ function run(time) {
     }
 
     console.log(`현재까지 걸린 시간 :${timeLast}/진행률:${progress}`);
-    box.style.marginLeft = 450 * progress + 'px';
+    box.style.marginLeft = 450 * `${progress}` + 'px';
 }
