@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비동기방식</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/common.js"></script>
+</head>
+<body>
+    <h1>비동기 방식</h1>
+    <script>
+        function fetchData(url){
+            return fetch(url)// 서버통신 데이터를 전달
+            .then(data=>{// 데이터에서 json데이터를 뽑아서 전달
+                let result = data.json();
+                return result;
+            })
+            .then(json =>{//json데이터를 받아서 분기 처리
+                return new Promise((resolve,reject)=>{
+                    if(json){
+                        resolve(json);
+                    }else{
+                        reject();
+                    }
+                })
+            })
+        }
+        fetchData('json/data.json')
+        .catch(error=>{
+            console.log(error);
+            console.log("데이터 호출에 문제가 있습니다.");
+        })
+        .then(result=>{
+            console.log(result);
+        })
+    </script>
+</body>
+</html>
